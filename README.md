@@ -27,7 +27,7 @@ The **LinkedIn Jobs Scraper** is a powerful tool designed to scrape and aggregat
 | `locationName`    | String | (Optional) Enter the city or region. |
 | `includeKeyword`  | String | (Optional) Comma-separated keywords (e.g., React, Next.js, remote, part time). |
 | `pagesToFetch`    | Integer | Number of pages to scrape. Minimum: 1. Default: 1. |
-| `last`          | String | Value can be "all", "24h", "48h" or "72h". Default: "all". |
+| `datePosted`          | String | Value can be "all", "24h", "48h", "72h", "3days", "7days" or "14days". Default: "all". |
 
 ### Example Input:
 
