@@ -1,5 +1,7 @@
 # Apify - LinkedIn Jobs Scraper
 
+https://apify.com/orgupdate/linkedin-jobs-scraper
+
 ## Overview
 
 The **LinkedIn Jobs Scraper** is a powerful tool designed to scrape and aggregate job listings from multiple sources. Whether you're building a job portal, conducting market research, or tracking employment trends, this actor provides structured job data in real time.
@@ -77,4 +79,4 @@ The actor returns structured job listings in JSON format:
 2. Search for **LinkedIn Jobs Scraper**.  
 3. Enter your search parameters and run the actor.  
 
-Start collecting job data effortlessly! 🚀
+Start collecting job data effortlessly! Acquire market intelligence faster with real-time global job postings 🚀
