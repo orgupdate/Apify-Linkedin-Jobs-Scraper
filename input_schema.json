@@ -1,54 +1,60 @@
 {
-    "title": "Job Scraper Input Schema",
-    "description": "Define input parameters for the job scraping actor",
-    "type": "object",
-    "schemaVersion": 1,
-    "properties": {
-      "countryName": {
-        "title": "Country",
-        "type": "string",
-        "description": "Select the country for job search.",
-        "default": "",
-        "editor": "textfield"
-      },
-      "companyName": {
-        "title": "Company Name",
-        "type": "string",
-        "description": "Enter the company name to filter job listings.",
-        "default": "",
-        "editor": "textfield"
-      },
-      "locationName": {
-        "title": "Location Name",
-        "type": "string",
-        "description": "Enter the city or region.",
-        "default": "",
-        "editor": "textfield"
-      },
-      "includeKeyword": {
-        "title": "Keywords to Include",
-        "type": "string",
-        "description": "Comma-separated keywords (e.g., React, Next.js).",
-        "default": "",
-        "editor": "textarea"
-      },
-      "pagesToFetch": {
-        "title": "Pages to Fetch",
-        "type": "integer",
-        "description": "Number of pages to scrape.",
-        "default": 1,
-        "minimum": 1,
-        "editor": "number"
-      },
-      "datePosted": {
-        "title": "Raw Filter - Posted in the last",
-        "type": "string",
-        "description": "Choose time range.",
-        "enum": ["today", "3days", "week", "month"],
-        "default": "month",
-        "editor": "select"
-      }
+  "title": "Job Scraper Input Schema",
+  "description": "Define input parameters for the job scraping actor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "countryName": {
+      "title": "Country",
+      "type": "string",
+      "description": "Select the country for job search.",
+      "default": "",
+      "editor": "textfield"
     },
-    "required": ["countryName","locationName", "pagesToFetch"]
-  }
-  
+    "companyName": {
+      "title": "Company Name",
+      "type": "string",
+      "description": "Enter the company name to filter job listings.",
+      "default": "",
+      "editor": "textfield"
+    },
+    "locationName": {
+      "title": "Location Name",
+      "type": "string",
+      "description": "Enter the city or region.",
+      "default": "",
+      "editor": "textfield"
+    },
+    "includeKeyword": {
+      "title": "Keywords to Include",
+      "type": "string",
+      "description": "Comma-separated keywords (e.g., React, Next.js).",
+      "default": "",
+      "editor": "textarea"
+    },
+    "pagesToFetch": {
+      "title": "Pages to Fetch",
+      "type": "integer",
+      "description": "Number of pages to scrape.",
+      "default": 1,
+      "minimum": 1,
+      "editor": "number"
+    },
+    "jobType": {
+      "title": "Job Type",
+      "type": "string",
+      "description": "Select job type.",
+      "enum": ["FULLTIME", "PARTTIME", "CONTRACTOR", "INTERN"],
+      "editor": "select"
+    },
+    "datePosted": {
+      "title": "Raw Filter - Posted in the last",
+      "type": "string",
+      "description": "Choose time range.",
+      "enum": ["today", "3days", "week", "month"],
+      "default": "month",
+      "editor": "select"
+    }
+  },
+  "required": ["countryName", "locationName", "pagesToFetch"]
+}
