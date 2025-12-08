@@ -1,18 +1,18 @@
-# 🚀 LinkedIn Jobs Scraper
+# 🚀 Linkedin Jobs Scraper
 
-The most efficient way to extract job listings directly from LinkedIn Jobs search results.
+The most efficient way to extract job listings directly from Linkedin Jobs search results.
 
 [View on Apify Store](#)
 
 ## 📖 Overview
 
-The **LinkedIn Jobs Scraper** is a powerful data extraction tool designed to aggregate job listings from the LinkedIn Jobs search engine. Since LinkedIn aggregates listings from Glassdoor, LinkedIn, ZipRecruiter, and direct company career pages, this actor serves as a "One-Stop Shop" for global employment data.
+The **Linkedin Jobs Scraper** is a powerful data extraction tool designed to aggregate job listings from the Linkedin Jobs search engine.
 
 Whether you're building a job board, analyzing labor market trends, or automating lead generation for recruitment, this actor delivers structured, clean data in real-time.
 
 ## ✨ Key Features
 
-- **🌍 Multi-Source Aggregation** – Access listings from thousands of job boards via a single LinkedIn search query.
+- **🌍 Multi-Source Aggregation** – Access listings from thousands of job boards via a single Linkedin search query.
 - **🎯 Laser-Focused Filtering** – Filter by specific companies, exact locations, job types (Remote/Contract), and posting dates.
 - **⚡ High Performance** – Optimized for speed and low-compute usage to save costs.
 - **📅 Fresh Data** – Scrape "Posted 3 days ago" or "Today" to get the newest opportunities first.
@@ -22,15 +22,15 @@ Whether you're building a job board, analyzing labor market trends, or automatin
 
 The actor accepts the following input parameters in JSON format.
 
-| Parameter        | Type    | Required | Description                                      | Default | Valid Values                                                     |
-| ---------------- | ------- | -------- | ------------------------------------------------ | ------- | ---------------------------------------------------------------- |
-| `countryName`    | String  | No       | The country context for the LinkedIn Search domain | "all"   | "usa", "uk", "india", etc.                                       |
-| `includeKeyword` | String  | **Yes**  | The main search terms or specific skills         | -       | Any search string (e.g., "React", "Remote", "Marketing Manager") |
-| `locationName`   | String  | No       | Specific city, state, or region                  | -       | Any location string (e.g., "San Francisco, CA")                  |
-| `companyName`    | String  | No       | Filter listings to a specific employer           | -       | Any company name (e.g., "LinkedIn", "Microsoft")                   |
-| `jobType`        | String  | No       | Filters by employment type                       | -       | `FULLTIME`, `PARTTIME`, `CONTRACTOR`, `INTERN`                   |
-| `datePosted`     | String  | No       | How recent the jobs should be                    | "month" | `today`, `3days`, `week`, `month`                                |
-| `pagesToFetch`   | Integer | No       | Number of pagination pages to scrape             | 1       | Positive integers                                                |
+| Parameter | Type | Required | Description | Default | Valid Values |
+|-----------|------|----------|-------------|---------|--------------|
+| `countryName` | String | No | The country context for the Linkedin Search domain | "all" | "usa", "uk", "india", etc. |
+| `includeKeyword` | String | **Yes** | The main search terms or specific skills | - | Any search string (e.g., "React", "Remote", "Marketing Manager") |
+| `locationName` | String | No | Specific city, state, or region | - | Any location string (e.g., "San Francisco, CA") |
+| `companyName` | String | No | Filter listings to a specific employer | - | Any company name (e.g., "Linkedin", "Microsoft") |
+| `jobType` | String | No | Filters by employment type | - | `FULLTIME`, `PARTTIME`, `CONTRACTOR`, `INTERN` |
+| `datePosted` | String | No | How recent the jobs should be | "month" | `today`, `3days`, `week`, `month` |
+| `pagesToFetch` | Integer | No | Number of pagination pages to scrape | 1 | Positive integers |
 
 ### 💻 Example Input Configuration
 
@@ -38,7 +38,7 @@ The actor accepts the following input parameters in JSON format.
       "countryName": "usa",
       "locationName": "new york",
       "includeKeyword": "software engineer, python",
-      "companyName": "linkedIn",
+      "companyName": "linkedin",
       "jobType": "FULLTIME",
       "datePosted": "week",
       "pagesToFetch": 3
@@ -59,7 +59,7 @@ The results are stored in the default Apify dataset. You can download them in JS
         "salary": "$120,000 - $150,000 a year",
         "date": "2025-03-25",
         "job_type": "Full-time",
-        "URL": "https://www.linkedIn.com/search?..."
+        "URL": "https://www.linkedin.com/search?..."
       }
     ]
 
@@ -68,9 +68,10 @@ The results are stored in the default Apify dataset. You can download them in JS
 - **job_title:** The official designation of the role.
 - **company_name:** The organization hiring.
 - **location:** Geographical location or "Remote" status.
-- **posted_via:** The original platform where LinkedIn found the job (e.g., Monster, Greenhouse, LinkedIn).
+- **posted_via:** The original platform where Linkedin found the job (e.g., Monster, Greenhouse, LinkedIn).
 - **salary:** Pay range (if provided by the employer).
 - **URL:** Direct link to the job application or listing.
+
 
 ## How to Use
 
@@ -104,7 +105,7 @@ You can run this actor via the Apify API using the official client libraries.
     }
 
     # Run the Actor and wait for it to finish
-    run = client.actor("orgupdate/linkedIn-jobs-scraper").call(run_input=run_input)
+    run = client.actor("orgupdate/linkedin-jobs-scraper").call(run_input=run_input)
 
     # Fetch and print Actor results from the run's dataset (if there are any)
     for item in client.dataset(run["defaultDatasetId"]).iterate_items():
@@ -126,7 +127,7 @@ You can run this actor via the Apify API using the official client libraries.
 
     (async () => {
         // Run the Actor and wait for it to finish
-        const run = await client.actor('orgupdate/linkedIn-jobs-scraper').call(input);
+        const run = await client.actor('orgupdate/linkedin-jobs-scraper').call(input);
 
         // Fetch and print Actor results from the run's dataset (if there are any)
         const { items } = await client.dataset(run.defaultDatasetId).listItems();
@@ -140,7 +141,7 @@ You can run this actor via the Apify API using the official client libraries.
 Don't just scrape data—act on it. You can integrate this actor with:
 
 - **Zapier / Make.com:** Trigger an email or Slack notification whenever a new job matching your criteria is posted.
-- **LinkedIn Sheets:** Automatically save new job listings into a spreadsheet for analysis.
+- **Linkedin Sheets:** Automatically save new job listings into a spreadsheet for analysis.
 - **Slack/Discord:** Create a bot that alerts your community about new job openings.
 
 ## 💡 Use Cases
