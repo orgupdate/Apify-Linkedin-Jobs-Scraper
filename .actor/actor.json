@@ -5,16 +5,10 @@
   "version": "1.0.0",
   "output": {
     "actorOutputSchemaVersion": 1,
-    "title": "Output schema of the LinkedIn Jobs Scraper",
+    "title": "Scraped Jobs",
     "description": "Each item is one job listing: title, company, location, salary when listed, posting date, source and the direct job link.",
-    "type": "object",
-    "properties": {
-      "jobs": {
-        "title": "Scraped Jobs",
-        "type": "string",
-        "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
-      }
-    }
+    "type": "string",
+    "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
   },
   "storages": {
     "dataset": {
